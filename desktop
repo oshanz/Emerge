@@ -1,0 +1,32 @@
+cvt 1360 768 60
+xrandr --newmode "1360x768_60.00"   84.75  1360 1432 1568 1776  768 771 781 798 -hsync +vsync
+xrandr --query | grep connected
+xrandr --addmode VGA1 "1360x768_60.00"
+xrandr --output VGA1 "1360x768_60.00"
+xrandr --output VGA1 --mode "1360x768_60.00"
+
+
+
+http://blog.500tech.com/is-reactjs-fast/?utm_source=javascriptweekly&utm_medium=email
+http://www.bappi-d-great.com/how-to-enable-php-mail-in-your-ubuntu/
+
+
+SELECT CONCAT('ALTER TABLE ',
+table_schema,
+'.',
+table_name,
+' ADD COLUMN id INT AUTO_INCREMENT NOT NULL PRIMARY KEY FIRST;') AS ddl
+INTO OUTFILE '/tmp/alter_table.sql'
+FROM information_schema.tables
+WHERE table_schema = 'db_name' 
+AND table_type = 'base table';
+
+
+Inconsistency:
+A DB that reported employee Joe Shmoe's department as Sales but that didn't list Joe Shmoe among the employees in the Sales department would be inconsistent.
+it's a logical property of the DB, independent of the actual data. 
+
+Integrity:
+A DB that reported jOe SaleS to be a member of the Shmoe department would lack integrity.
+jOe SaleS isn't a valid employee name and Shmoe isn't a valid department.
+that's not logically invalid, but it is invalid relative to the rules that govern data content.
