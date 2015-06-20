@@ -9,3 +9,5 @@ http://blog.nedex.io/laravel-5-1-broadcasting-events-using-redis-driver-socket-i
 https://stackoverflow.com/questions/30819872/broadcasting-event-error-in-laravel-5-1-using-redis
 
 http://blogs.msdn.com/b/cdndevs/archive/2015/06/15/learning-redis-part-6-redis-publish-subscribe.aspx
+
+https://stackoverflow.com/questions/4441798/how-to-use-redis-publish-subscribe-with-nodejs-to-notify-clients-when-data-value
