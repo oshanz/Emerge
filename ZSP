@@ -1,0 +1,159 @@
+1
+INTRO TO PROGRAMMING
+
+    Language and the Logic of Programming
+    Types of Programming Languages and Vocabulary
+    What is PHP
+    Why use PHP
+
+2
+PHP LANGUAGE BASICS
+
+    Syntax
+    Quotes
+    Comments
+    Special Characters
+    Data Types
+    Precedence
+    Symbols
+
+3
+PHP IDENTIFIERS
+
+    Variables
+    Constants
+    Arrays
+
+4
+PHP CONTROL FLOW BASICS
+
+    Operators
+    Conditionals
+
+5
+PHP FUNCTIONAL BASICS
+
+    Functions
+    Function Design Tools
+    File Systems (Handling)
+
+6
+FILE SYSTEM BASICS
+
+    Constants
+    Commonly Used File Functions
+    File System Performance
+
+7
+PHP WEB CONCEPTS
+
+    Client/Server Communications
+    How to embed PHP into HTML
+    How to embed HTML into PHP
+    Cookies
+    Sessions
+    $_GET and $_POST
+
+8
+PHP DATABASE BASICS
+
+    Introduction to Relationship Databases
+    Keywords and Statements in SQL
+    Using PHP Functions with the MySQL Data Engine
+
+9
+DEVELOPING PHP APPS
+
+    Defining a Solution without Writing Code
+    Organizing a Concept Solution
+    Creating a Program Skeleton
+    Defining Error Checking Requirements
+    Introduction to Application Security
+
+10
+CHALLENGE PROJECT
+
+    Coding an Order Inquiry application
+
+*********************************************************************
+
+
+1
+PHP SYNTAX REVIEW
+
+    Quotes
+    Comments
+    Special Characters
+    Data Types
+    Precedence and Definitions
+    Arrays
+    Operators
+    Conditionals and Loops
+    Functions
+
+2
+PHP LANGUAGE CONCEPTS
+
+    Including Files
+    Globals
+    References
+    File System Basics
+
+3
+CONFIGURING PHP
+
+    Setting up a Development Environment
+    php.ini Settings
+
+4
+REGULAR EXPRESSIONS
+
+    Characters and Symbols
+    RegEx Functions
+    Pattern Modifiers
+
+5
+PHP WEB CONCEPTS
+
+    Server Communication
+    HTTP Headers
+    Output Buffering
+    Browser Caching
+    Cookies
+    Sessions
+    Email
+    Forms
+
+6
+PHP OBJECT-ORIENTED PROGRAMMING
+
+    Classes
+    Static Context
+    Visibility (PPP)
+    Overriding Functions
+    Interfaces
+    Cloning
+    Namespaces
+
+ 
+7
+PHP DATABASE BASICS
+
+    Relational Databases
+    SQL and MySQL
+    PDO
+    Stored Procedures
+    Transactions
+
+8
+CRITIAL ASPECTS OF BUILDING PHP APPLICATIONS
+
+    Testing and Debugging
+    Troubleshooting Procedures: Development
+    phpDocumentor, phpDoc
+    Exceptions
+    Web Services
+    Performance Enhancements
+    Security and Validation
+
+
