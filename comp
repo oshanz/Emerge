@@ -1,0 +1,26 @@
+Key PHP Technology Competence
+CMS 	Frameworks
+WordPress, Drupal, Joomla, Magento 	Symfony, Yii, Laravel, CodeIgniter, Zend
+Data Management 	Queue
+
+    SQL & NoSQL: MySQL, PostgreSQL, Amazon RDS; MongoDB, Cassandra, CouchDB, Amazon DynamoDB
+    Caching: Memcached, Redis, Amazon ElastiCache
+    Searching: Sphinx, Solr, Lucene, Elasticsearch, Amazon CloudSearch
+
+	RabbitMQ, ActiveMQ, Amazon SQS
+Cloud Computing Platforms 	Big Data
+Amazon Web Services 	Hadoop, MapReduce, Amazon EMR
+Frontend Stack 	Third-party APIs
+
+    Languages: HTML5, CSS3, JavaScript, SASS, LESS, CoffeeScript
+    UI & Widgets: Bootstrap, jQuery UI, Kendo UI
+    JavaScript Frameworks: Backbone.js, AngularJS, KnockoutJS
+
+	
+
+    Analytics: Google, ComScore, Nielsen, Flurry
+    Payment: PayPal, Stripe, Authorize.Net
+    Social: Facebook, Twitter, Google+
+    Geolocation: Google Maps, Bing Maps
+    File storage: Dropbox, Box, ownCloud, Google Drive
+
