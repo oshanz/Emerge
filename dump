@@ -1,0 +1,22 @@
+ 3
+down vote
+	
+
+Use tcpdump
+
+Open qty 2 terminal/shell windows or just use screen.
+
+In the first window, use tcpdump to capture transmission data from/to your NIC (eth0) to a file:
+
+sudo tcpdump -s 9999 -i eth0 -w myfile.txt
+
+In the second window, fire off your ab command:
+
+ab -n 500 -c 200 http://domain.com/test/index.php
+
+When that's all done, parse the file with strings and grep:
+
+strings myfile2.txt | grep -C 3 "200 OK"
+
+You should be able to monitor all the data segments from there by eyeballing or grep'ing the results.
+
