@@ -1,0 +1,18 @@
+
+
+Basic requirements:
+
+    Frequent or overnight builds to catch problems early.[6][7][8]
+    Support for Source Code Dependency Management
+    Incremental build processing
+    Reporting that traces source to binary matching
+    Build acceleration
+    Extraction and reporting on build compile and link usage
+
+Optional requirements:[9]
+
+    Generate release notes and other documentation such as help pages
+    Build status reporting
+    Test pass or fail reporting
+    Summary of the features added/modified/deleted with each new build
+
