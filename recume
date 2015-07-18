@@ -1,0 +1,90 @@
+
+Juan Treminio @ Web Developer
+Experienced web developer with a heavy focus on PHP and MySQL. Testing fanatic
+Experience
+Senior Web Developer, Architect @ Mytrus
+
+Brought in for my testing experience, in charge of integrating modern tools into an existing, stable and profitable application, such as Composer, Behat, Vagrant/Puppet, Twig and PHPUnit.
+
+Programming with security and privacy concerns as priority issues since this is a medical-based application in use around the world.
+
+Helped team migrate from SVN to git.
+
+Began my journey into Objective-C (iOS) development.
+
+php phpunit composer vagrant puppet behat tdd mysql git svn zend framework 1
+Senior Web Developer, Architect @ etouches
+
+In charge of paving the way to a completely unit/behavioral tested rewrite of our extremely popular conference management application.
+
+Provide insight to proper software architecture, best-practices, testing and tools.
+
+Train coworkers on unit testing, including the concepts, purpose and benefits of testing.
+
+Ensure our rewritten application is well-structured, well-tested and follows best practices.
+
+php phpunit behat mink tdd mysql git jenkins yii yui
+Senior Web Developer @ Kaplan Professional
+
+Working with a small group of great developers creating Kaplan Professional's next-generation Learning Management System (LMS).
+
+Helped move the group from writing tests after code, to TDD (using PHPUnit) and finally to BDD (using Behat/Mink).
+
+Application is built on an old, highly customized version of Kohana 2.x, with a number of Zend Modules, all configured to allow easy testing.
+
+Our code is extremely DRY and separated, with controllers/views/domains/daos, and I love it!
+
+php phpunit behat mink tdd bdd mysql mercurial jenkins kohana zend-framework jquery
+Senior Web Developer @ Beckett Media
+
+Worked to bring an oft-delayed eCommerce application to life.
+
+Worked extensively with Paypal API, integrating payments and refunds abilities into the system.
+
+Database had over 30 million items, all hooked into Sphinx for full text search.
+
+I was brought in specifically to help the team finish the development of the application, so getting quickly up to speed on the codebase was very important.
+
+php svn mysql sphinx codeigniter jquery
+Senior Web Developer, IT Manager @ HomeCEUConnection.com
+
+I was brought in to be sole maintainer of a pre-existing, custom LMS.
+
+HomeCEUConnection is an LMS and eCommerce app mixed into one which allows therapists around the country take their online continuing education courses to maintain their licenses.
+
+Exceptional record keeping and logging required by regulations.
+
+While here I also created RehabRally.com for an in-person, live conference that was held in Orlando, FL. The application was written in under a month using CodeIgniter.
+
+php git mysql kohana codeigniter jquery
+Web Developer @ EEWDI
+
+Worked at a small agency creating over 350 websites, all powered by a custom CMS backend.
+
+I eventually moved up to lead web developer, supervising 2 developers in Bulgaria and a designer in Spain.
+
+Our CMS integrated with several different payment processors, including credit card and check payments, as well as an anti-fraud script.
+
+While here I also dabbled a bit in AS3 to create an awesome Flash movie player to be distributed to our affiliates.
+
+php mysql wordpress
+Projects
+PuPHPet @ Github
+
+PuPHPet is a simple GUI to set up virtual machines for web development.
+
+It allows developers to effortlessly create customized, shareable Vagrant/Puppet manifests for local and remote virtualized development.
+
+Fairly popular, and completely open source!
+Zimple @ Github
+
+This is a wrapper around the simple Pimple container. It provides a few features that makes handling objects and writing tests much easier.
+
+If you have a codebase that is untestable and you are unable to offer deep refactoring to make it untestable, having a container such as this one is a good step toward gaining control over your codebase.
+Yumilicious Tests @ Github
+
+Unit and integration tests for Yumilicious, a medium web project I was solely responsible for.
+Test Extensions @ Github
+
+Some useful PHPUnit methods to make testing easier and more fun!
+
