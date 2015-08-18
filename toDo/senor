@@ -1,0 +1,8 @@
+- Have you used Redis, MongoDB, Riak and/or Cassandra?
+- Can you set up and make use of a Continuous Integration server like Jenkins?
+- Do you understand TDD, BDD and other testing techniques?
+- How's your HTTP? Do you understand REST, caching headers, URL design, content negotiation, SPDY, WebSockets?
+- Are you familiar with message queues, pubsub, zeromq?
+- Do you understand basic web app security? XSS, CSRF, clickjacking, OWASP, escape-by-default templating?
+- Do you know what's involved in client-side web performance optimisation (Steve Souders' High Performance Web Sites stuff)?
+
