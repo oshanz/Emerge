@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="https://graph.facebook.com/?callback=WPCOMSharing.update_facebook_count&amp;ids=https%3A%2F%2Fonelonecoder.wordpress.com%2F2015%2F04%2F16%2Fandorid-restful-client-using-retrofit-gson%2F&amp;_=1440656001643" async=""></script><script src="https://cdn.api.twitter.com/1/urls/count.json?callback=jQuery1113006284614541686506_1440656001641&amp;url=https%3A%2F%2Fonelonecoder.wordpress.com%2F2015%2F04%2F16%2Fandorid-restful-client-using-retrofit-gson%2F&amp;_=1440656001642" async=""></script><script src="https://cdn.api.twitter.com/1/urls/count.json?callback=jQuery1113006284614541686506_1440656001639&amp;url=http%3A%2F%2Fonelonecoder.wordpress.com%2F2015%2F04%2F16%2Fandorid-restful-client-using-retrofit-gson%2F&amp;_=1440656001640" async=""></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andorid RESTful client using Retrofit &amp; Gson | onelonecoder</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://onelonecoder.wordpress.com/xmlrpc.php">
+
+<meta name="google-site-verification" content="itG1tHRsueiBsys9SM04AtzdxQ0QRRutbQl-zmDxETk">
+<link rel="alternate" type="application/rss+xml" title="onelonecoder » Feed" href="https://onelonecoder.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="onelonecoder » Comments Feed" href="https://onelonecoder.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="onelonecoder » Andorid RESTful client using Retrofit &amp;&nbsp;Gson Comments Feed" href="https://onelonecoder.wordpress.com/2015/04/16/andorid-restful-client-using-retrofit-gson/feed/">
+<script src="a_data/platform.js" async="" type="text/javascript"></script><script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" id="all-css-0" href="a_data/smileyproject.css" type="text/css" media="all">
+<link rel="stylesheet" id="open-sans-css" href="a_data/css_004.css" type="text/css" media="all">
+<link rel="stylesheet" id="all-css-2" href="a_data/a.css" type="text/css" media="all">
+<style id="edin-style-inline-css" type="text/css">
+.hero.with-featured-image { background-image: url(https://onelonecoder.files.wordpress.com/2015/04/retrofit_banner.png?w=800); }
+</style>
+<link rel="stylesheet" id="print-css-3" href="a_data/global-print.css" type="text/css" media="print">
+<link rel="stylesheet" id="goran-noto-sans-css" href="a_data/css_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="goran-noto-serif-css" href="a_data/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="goran-droid-sans-mono-css" href="a_data/css_003.css" type="text/css" media="all">
+<link rel="stylesheet" id="all-css-10" href="a_data/a_002.css" type="text/css" media="all">
+<script type="text/javascript" src="a_data/a"></script><style type="text/css"></style>
+<link rel="stylesheet" id="all-css-0" href="a_data/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://onelonecoder.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="ORMLite a lightweight database mapping library for&nbsp;Android" href="https://onelonecoder.wordpress.com/2015/04/03/ormlite-a-lightweight-database-mapping-library-for-android/">
+<link rel="next" title="Objective-C Custom Video&nbsp;Player" href="https://onelonecoder.wordpress.com/2015/08/02/objective-c-custom-video-player/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="Andorid%20RESTful%20client%20using%20Retrofit%20&amp;%20Gson_files/a.html">
+<link rel="shortlink" href="http://wp.me/p5X7bM-1z">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=https%3A%2F%2Fonelonecoder.wordpress.com%2F2015%2F04%2F16%2Fandorid-restful-client-using-retrofit-gson%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=https%3A%2F%2Fonelonecoder.wordpress.com%2F2015%2F04%2F16%2Fandorid-restful-client-using-retrofit-gson%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Andorid RESTful client using Retrofit &amp; Gson">
+<meta property="og:url" content="https://onelonecoder.wordpress.com/2015/04/16/andorid-restful-client-using-retrofit-gson/">
+<meta property="og:description" content="What is REST ? REST stand&nbsp;for Representational State Transfer.&nbsp;It relies on a stateless, client-server, cacheable communications protocol and in virtually all cases, the HTTP protocol is used. REST...">
+<meta property="article:published_time" content="2015-04-16T06:01:27+00:00">
+<meta property="article:modified_time" content="2015-08-03T15:05:32+00:00">
+<meta property="og:site_name" content="onelonecoder">
+<meta property="og:image" content="https://onelonecoder.files.wordpress.com/2015/04/retrofit_banner.png">
+<meta property="og:image:width" content="700">
+<meta property="og:image:height" content="263">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:site" content="@LakySam">
+<meta name="twitter:image:src" content="https://onelonecoder.files.wordpress.com/2015/04/retrofit_banner.png?w=640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@LakySam">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<link rel="shortcut icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/008904f7b38a1c2c84d5c4e0d30f4be7?s=16" sizes="16x16">
+<link rel="icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/008904f7b38a1c2c84d5c4e0d30f4be7?s=16" sizes="16x16">
+<link rel="apple-touch-icon-precomposed" href="https://secure.gravatar.com/blavatar/05c2d4a6d553c23ac7787b4c14eed377?s=114">
+<link rel="openid.server" href="https://onelonecoder.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://onelonecoder.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://onelonecoder.wordpress.com/osd.xml" title="onelonecoder">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wordpress.com/opensearch.xml" title="WordPress.com">
+		<style type="text/css">
+			.recentcomments a {
+				display: inline !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			table.recentcommentsavatartop img.avatar, table.recentcommentsavatarend img.avatar {
+				border: 0px;
+				margin: 0;
+			}
+
+			table.recentcommentsavatartop a, table.recentcommentsavatarend a {
+				border: 0px !important;
+				background-color: transparent !important;
+			}
+
+			td.recentcommentsavatarend, td.recentcommentsavatartop {
+				padding: 0px 0px 1px 0px;
+				margin: 0px;
+			}
+
+			td.recentcommentstextend {
+				border: none !important;
+				padding: 0px 0px 2px 10px;
+			}
+
+			.rtl td.recentcommentstextend {
+				padding: 0px 10px 2px 0px;
+			}
+
+			td.recentcommentstexttop {
+				border: none;
+				padding: 0px 0px 0px 10px;
+			}
+
+			.rtl td.recentcommentstexttop {
+				padding: 0px 10px 0px 0px;
+			}
+		</style>
+		<style type="text/css" media="print">#wpadminbar { display:none; }</style>
+<style type="text/css" media="screen">
+	html { margin-top: 32px !important; }
+	* html body { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+		* html body { margin-top: 46px !important; }
+	}
+</style>
+<meta name="application-name" content="onelonecoder"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="#HappyCoding"><meta name="msapplication-task" content="name=Subscribe;action-uri=https://onelonecoder.wordpress.com/feed/;icon-uri=https://secure.gravatar.com/blavatar/008904f7b38a1c2c84d5c4e0d30f4be7?s=16"><meta name="msapplication-task" content="name=Read Freshly Pressed;action-uri=http://wordpress.com/#fresh;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="title" content="Andorid RESTful client using Retrofit &amp;&nbsp;Gson | onelonecoder on WordPress.com">
+<meta name="description" content="What is REST ? REST stand&nbsp;for Representational State Transfer.&nbsp;It relies on a stateless, client-server, cacheable communications protocol and in virtually all cases, the HTTP protocol is used. REST defines a set of architectural principles by which developers can design web-services that focus on system's resources, including how resource states are addressed and transferred over HTTP…">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="single single-post postid-97 single-format-standard logged-in admin-bar no-customize-support mp6 customizer-styles-applied has-custom-background navigation-default sidebar-right has-site-logo highlander-enabled highlander-light">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="site-header" role="banner">
+		
+		<div class="site-branding">
+			<a href="https://onelonecoder.wordpress.com/" class="site-logo-link" rel="home"><img src="a_data/my_logo1.png" class="site-logo attachment-edin-logo" alt="my_logo" data-size="edin-logo" width="192" height="192"></a>			<h1 class="site-title"><a href="https://onelonecoder.wordpress.com/" rel="home">onelonecoder</a></h1>
+			<h2 class="site-description">#HappyCoding</h2>
+		</div><!-- .site-branding -->
+
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+				<button class="menu-toggle">Menu</button>
+				<div class="menu-primary"><ul id="menu-nav" class="clear"><li id="menu-item-12" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12"><a href="https://onelonecoder.wordpress.com/all-in-a-day/">All in a day</a></li>
+<li id="menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13"><a href="https://onelonecoder.wordpress.com/about/">About</a></li>
+<li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="https://onelonecoder.wordpress.com/contact-me/">Contact Me</a></li>
+</ul></div>			</nav><!-- #site-navigation -->
+			</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+
+	<div class="content-wrapper clear">
+
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main" role="main">
+
+				
+					
+<article id="post-97" class="post-97 post type-post status-publish format-standard has-post-thumbnail hentry category-android-2 category-gson category-rest category-web-services tag-android tag-demo tag-gson tag-rest tag-restful tag-retrofit tag-sample tag-web-services">
+	<header class="entry-header">
+		<h1 class="entry-title">Andorid RESTful client using Retrofit &amp;&nbsp;Gson</h1>
+		<div class="entry-meta">
+			<span class="posted-on">Posted on <a href="https://onelonecoder.wordpress.com/2015/04/16/andorid-restful-client-using-retrofit-gson/" rel="bookmark"><time class="entry-date published" datetime="2015-04-16T06:01:27+00:00">April 16, 2015</time><time class="updated" datetime="2015-08-03T15:05:32+00:00">August 3, 2015</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://onelonecoder.wordpress.com/author/lakitharav/">lakitharav</a></span></span>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	
+	<a class="post-thumbnail" href="https://onelonecoder.wordpress.com/2015/04/16/andorid-restful-client-using-retrofit-gson/">
+		<img src="a_data/retrofit_banner.png" class="attachment-edin-featured-image wp-post-image" alt="Retrofit Banner" width="772" height="290">	</a>
+
+
+	<div class="entry-content">
+		<h1>What is REST ?</h1>
+<p style="text-align:justify;">REST stand&nbsp;for <strong><span style="text-decoration:underline;">Re</span></strong>presentational <strong><span style="text-decoration:underline;">S</span></strong>tate <strong><span style="text-decoration:underline;">T</span></strong>ransfer.&nbsp;It
+ relies on a stateless, client-server, cacheable communications protocol
+ and in virtually all cases, the HTTP protocol is used. REST defines a 
+set of architectural principles by which developers can design 
+web-services that focus on system’s resources, including how resource 
+states are addressed and transferred over HTTP by wide range of clients 
+written in different languages.</p>
+<p style="text-align:justify;">When first introduced in year 2000 by Roy
+ Fielding, University of California, REST did not attract any 
+attention.&nbsp;But based on statistics of last few years, REST has 
+managed to dominate the web-service design model. In fact, REST has had 
+such a large impact on the Web that it has mostly displaced CORBA, RPC 
+and SOAP, WSDL-based interface design models because it’s considerably 
+simpler in style and development.</p>
+<h1>RESTful Web-Services</h1>
+<p>RESTful applications use HTTP requests to post data (create and 
+update), read data, and delete data. REST uses HTTP for all four CRUD 
+(create/read/update/delete) operations.</p>
+<p>For most developers, REST is a lightweight alternative mechanism for 
+designing Web-Services. Even though it’s lightweight, REST is 
+fully-featured; there’s basically nothing you can do in web-services 
+that can’t be done with a RESTful architecture.</p>
+<p style="text-align:justify;">But But !, REST is not a “standard”, so there will never be a W3C recommendation for REST <span class="wp-smiley wp-emoji wp-emoji-sad" title=":(">:(</span>
+ cause developers can “roll your own” REST frameworks standard libraries
+ based on Perl, Java, C# or whatever the language they prefer.</p>
+<h2>How easy is REST !</h2>
+<p style="text-align:justify;">Let’s start with an example… We will 
+compare two web-service one design using SOAP and other using REST to 
+get detailed information about someone by passing his/ her Id.</p>
+<p>Using SOAP, the request will look like this;</p>
+<pre class="code">&lt;?xml version="1.0"?&gt;
+&lt;soap:Envelope
+xmlns:soap="http://www.w3.org/2001/12/soap-envelope"
+soap:encodingStyle="http://www.w3.org/2001/12/soap-encoding"&gt;
+ &lt;soap:body pb="http://www.acme.com/phonebook"&gt;
+  &lt;pb:GetUserDetails&gt;
+   &lt;pb:UserID&gt;12345&lt;/pb:UserID&gt;
+  &lt;/pb:GetUserDetails&gt;
+ &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</pre>
+<p>Using REST, the request will look like this;</p>
+<pre class="code">http://www.acme.com/phonebook/UserDetails/12345</pre>
+<p>Well I guess there’s no need of explanation here, right <span class="wp-smiley wp-emoji wp-emoji-wink" title=";)">;)</span></p>
+<p style="text-align:justify;">I’ll explain anyways…. So in the first 
+request which was done using SOAP, the entire&nbsp;message has to be 
+sent using HTTP POST request. Which is considerably larger than the 
+RESTful request. And again the SOAP request probably be an XML file, 
+where the result or the response wrapped inside “payload” tag inside 
+SOAP response envelop.</p>
+<p style="text-align:justify;">Now look at the RESTful request, note 
+that is not the request body, it’s just the URL !! This URL is sent to 
+the server using a GET request and the HTTP reply is the raw result 
+data. Not embedded inside anything, you decide&nbsp;how to wrap it.</p>
+<p>Enough about REST, let’s move on to the Android client…..</p>
+<h1>Tutorial</h1>
+<p style="text-align:justify;">This tutorial will focus on how to easily build and RESTful Android Client using two awesome libraries, Retrofit and GSON.</p>
+<h2>What’s Retrofit ?</h2>
+<p>Simply put, “<strong>Retrofit</strong> turns your REST API into a Java interface”</p>
+<p style="text-align:justify;">It’s an nice framework for organizing API
+ calls in your project. The request method are relative URL are added 
+with an annotation, which make the code clean as simple. And with 
+annotations, you can easily add a request body, manipulate the URL or 
+headers and add query parameters to the request.</p>
+<p style="text-align:justify;">Java Interface;</p>
+<pre class="prettyprint prettyprinted"><span class="kwd">public</span> <span class="kwd">interface</span> <span class="typ">GitHubService</span> <span class="pun">{</span>
+  <span class="lit">@GET</span><span class="pun">(</span><span class="str">"/users/{user}/repos"</span><span class="pun">)</span>
+  <span class="typ">List</span><span class="pun">&lt;</span><span class="typ">Repo</span><span class="pun">&gt;</span><span class="pln"> listRepos</span><span class="pun">(</span><span class="lit">@Path</span><span class="pun">(</span><span class="str">"user"</span><span class="pun">)</span> <span class="typ">String</span><span class="pln"> user</span><span class="pun">);</span>
+<span class="pun">}</span></pre>
+<p style="text-align:justify;">Learn more about it&nbsp;<a title="RESTful Retrofit" href="http://square.github.io/retrofit/" target="_blank">here</a>.</p>
+<h2 style="text-align:justify;">What’s GSON ?</h2>
+<p style="text-align:justify;">GSON (aka Google GSON) is an open-source 
+java library to serialize and deserialize java objects to JSON 
+representation. So it can be used to convert JSON string to Java objects
+ and vise versa. Oh and the best part is, GSON can work 
+with&nbsp;arbitrary java objects, including pre-existing object that you
+ don’t have source code of.</p>
+<h3 style="text-align:justify;">But why !?</h3>
+<p style="text-align:justify;">Well, there are quite a few open-source 
+projects that convert java objects to JSON. But most of them need java 
+annotations in class; something that you can’t do to classes that you 
+don’t have access to. And most do not support the use of java generics. 
+So comes the the GSON for the rescue….</p>
+<p><strong>Gson Goals</strong></p>
+<ul>
+<ul>
+<li>Provide simple toJson() and fromJson() methods to convert Java objects to JSON and vice-versa</li>
+<li>Allow pre-existing unmodifiable objects to be converted to and from JSON</li>
+<li>Extensive support of Java Generics</li>
+<li>Allow custom representations for objects</li>
+<li>Support arbitrarily complex objects (with deep inheritance hierarchies and extensive use of generic types)</li>
+</ul>
+</ul>
+<p><strong>.toJson()</strong> Serializing Object to JSON</p>
+<pre class="java">String userJSON = new Gson().toJson(obj);</pre>
+<p><strong>.fromJson()</strong> Deserialize object from&nbsp;JSON</p>
+<pre class="java">DataObject obj = new Gson().fromJson(jsonString, DataObject.class);</pre>
+<p>Learn more about GSON from <a title="GSON Link" href="https://github.com/google-gson/google-gson" target="_blank">here</a>.</p>
+<h2>Let’s do this thing !!!!!</h2>
+<p style="text-align:justify;">For this tutorial I’ll be using and open weather API from&nbsp;<a title="RESTful Open Weather" href="http://openweathermap.org/api" target="_blank">openweathermap.org/api</a>&nbsp;as our RESTful API. You can download the Android Studio sample project GitRepo from here.</p>
+<h3>Project Structure</h3>
+<p style="text-align:justify;"><a href="https://onelonecoder.files.wordpress.com/2015/04/screen-shot-2015-04-08-at-4-00-09-pm.png"><img class=" size-medium wp-image-114 alignleft" src="a_data/screen-shot-2015-04-08-at-4-00-09-pm.png" alt="RESTful Project Structure" width="251" height="300"></a>For
+ this project I’ve created two packages, ‘model’ to place all out object
+ classes and ‘api’ package to place all our API call classes.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Step 1: Importing Dependencies</h3>
+<p>For this project we need two dependencies libraries called Retrofit and GSON.</p>
+<pre>com.squareup.retrofit:retrofit:1.9.0
+com.google.code.gson:gson:2.3.1</pre>
+<p>You can find out how to add dependencies to a project in this tutorial <a title="ORMLite Link" href="https://onelonecoder.wordpress.com/2015/04/03/ormlite-a-lightweight-database-mapping-library-for-android/" target="_blank">here</a>.</p>
+<h3>Step 2: Creating the Model Class</h3>
+<p>You can create your model class as the way you have always created 
+the model class. But when creating the class make sure to give property 
+names, exactly similar to the JSON propert names or you can user the 
+@SerializedName(“json_name”) annotation to map JSON value to the 
+property value. To use that you need to import 
+“SerializedName”&nbsp;package.</p>
+<pre>import com.google.gson.annotations.SerializedName;</pre>
+<pre>@SerializedName("error")
+public boolean status;</pre>
+<p>In the demo you will find the model class named as&nbsp;<strong>Country </strong>in model package.</p>
+<h3>Step 3: Creating the RESTful API Class</h3>
+<p>I always prefer&nbsp;isolating same context API calls to separate 
+classes to reduce the code complexity and improve manageability.</p>
+<pre>package ormlite.demo.olc.com.restfulclient.api;
+
+import ormlite.demo.olc.com.restfulclient.model.Country;
+import retrofit.RestAdapter;
+import retrofit.converter.GsonConverter;
+import retrofit.http.GET;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.util.List;
+
+public class RestCountriesAPI {
+
+ private const String service_url = "https://restcountries.eu/rest/v1";
+
+ public interface GetAllAPI {
+ @GET("/all")
+   List&lt;Country&gt; getCountries();
+ }
+
+ public List&lt;Country&gt; GetAllCountries() {
+
+   Gson gson = new GsonBuilder().create();
+
+   RestAdapter restAdapter = new RestAdapter.Builder()
+   .setEndpoint(service_url)
+   .setConverter(new GsonConverter(gson))
+   .build();
+
+   GetAllAPI service = restAdapter.create(GetAllAPI.class);
+
+   List&lt;Country&gt; countrylist = service.getCountries();
+
+   return countrylist;
+ }
+
+}</pre>
+<h4>Defining the Interface</h4>
+<p>In your API classes the first thing you have to do is to define the 
+interfaces, that mean saying Java what are the REST API classes that you
+ are going to work with. In our example that would be getting the 
+country list from the API by calling ‘/all’.</p>
+<pre>public interface GetAllAPI {
+ @GET("/all")
+   List&lt;Country&gt; getCountries();
+ }</pre>
+<p>Here, <strong>@GET</strong> is the request type for the for calling the API and <strong>List&lt;Country&gt;&nbsp;</strong>return
+ type from the API call. And we have called that method ‘getCountries()’
+ as the framework will implement what happen inside it.</p>
+<h4>Implementing</h4>
+<p>Next step of you class should be to implement the interfaces that you
+ have defined earlier. For that we use the Retrofit 
+framework&nbsp;RestAdapter.&nbsp;<strong>RestAdapter </strong>class is responsible generating the implementation of our interfaces in out case&nbsp;<strong>GetAllAPI&nbsp;</strong>interface.</p>
+<pre>public List&lt;Country&gt; GetAllCountries() {
+
+   Gson gson = new GsonBuilder().create();
+
+   RestAdapter restAdapter = new RestAdapter.Builder()
+   .setEndpoint(service_url)
+   .setConverter(new GsonConverter(gson))
+   .build();
+
+   GetAllAPI service = restAdapter.create(GetAllAPI.class);
+
+   List&lt;Country&gt; countrylist = service.getCountries();
+
+   return countrylist;
+ }</pre>
+<p><strong>Gson&nbsp;</strong>class has been instantiated here so that 
+will do the job of converting the JSON&nbsp;repose into out class 
+variables. And then we initialize the <strong>RestAdapter </strong>with Service URL and Gson instance.</p>
+<h4>Calling the APIs</h4>
+<pre>List&lt;Country&gt; countrylist = service.getCountries();</pre>
+<p>As simple as it gets, only thing you have to do is call the interface
+ method as above and Retrofit and Gson frameworks will handle the rest 
+and give you the output as you expect. And that’s it ! now you have a 
+fully functional RESTful Android client with you that can be use to call
+ any REST API.</p>
+<h4>Usage</h4>
+<pre>private class DownloadFilesTask extends AsyncTask&lt;String, Integer, List&lt;Country&gt;&gt; {
+
+ protected List&lt;Country&gt; doInBackground(String... urls) {
+
+   RestCountriesAPI api = new RestCountriesAPI();
+   return api.GetAllCountries();
+ }
+
+ protected void onProgressUpdate(Integer... progress) {
+
+ }
+
+ protected void onPostExecute(List&lt;Country&gt; results) {
+
+   StringBuilder sb = new StringBuilder();
+   for(Country country : results)
+   {
+     Log.d("Countries Output: ", country.getName());
+     sb.append(country.getName() + "\n");
+   }
+
+   ((TextView) findViewById(R.id.txt_log)).setText(sb.toString());
+
+ }
+ }</pre>
+<p>As above I suggest&nbsp;call your APIs through Android AsyncTasks. To lear more about AsyncTasks click <a title="Retrofit AsyncTask" href="http://http//developer.android.com/reference/android/os/AsyncTask.html" target="_blank">here</a>.</p>
+<h5>References</h5>
+<p>GitHub Link:&nbsp;<a title="RESTful Client Demo" href="https://github.com/LakithaRav/RESTfulClientDemo" target="_blank">https://github.com/LakithaRav/RESTfulClientDemo</a></p>
+<p>Retrofit :&nbsp;<a title="Retrofit API" href="http://square.github.io/retrofit" target="_blank">http://square.github.io/retrofit</a></p>
+<p>Gson :&nbsp;<a title="GSON API" href="https://github.com/google/gson" target="_blank">https://github.com/google/gson</a></p>
+<p>Android AsyncTask :&nbsp;<a title="Retrofit AsyncTask" href="http://developer.android.com/reference/android/os/AsyncTask.html" target="_blank">http://developer.android.com/reference/android/os/AsyncTask.html</a></p>
+<div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-press-this"><a rel="nofollow" data-shared="" class="share-press-this sd-button share-icon" href="https://onelonecoder.wordpress.com/2015/04/16/andorid-restful-client-using-retrofit-gson/?share=press-this&amp;nb=1" target="_blank" title="Click to Press This!"><span>Press This</span></a></li><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-97" class="share-twitter sd-button share-icon" href="https://onelonecoder.wordpress.com/2015/04/16/andorid-restful-client-using-retrofit-gson/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-97" class="share-facebook sd-button share-icon" href="https://onelonecoder.wordpress.com/2015/04/16/andorid-restful-client-using-retrofit-gson/?share=facebook&amp;nb=1" target="_blank" title="Share on Facebook"><span>Facebook</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-97" class="share-google-plus-1 sd-button share-icon" href="https://onelonecoder.wordpress.com/2015/04/16/andorid-restful-client-using-retrofit-gson/?share=google-plus-1&amp;nb=1" target="_blank" title="Click to share on Google+"><span>Google</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" id="like-post-wrapper-87970670-97-55deaa79d78fb" data-src="//widgets.wp.com/likes/#blog_id=87970670&amp;post_id=97&amp;origin=onelonecoder.wordpress.com&amp;obj_id=87970670-97-55deaa79d78fb" data-name="like-post-frame-87970670-97-55deaa79d78fb"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height:55px"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><span class="sd-text-color"></span><a class="sd-link-color"></a></div></div>	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="cat-links">Posted in <a href="https://onelonecoder.wordpress.com/category/android-2/" rel="category tag">Android</a>, <a href="https://onelonecoder.wordpress.com/category/gson/" rel="category tag">GSON</a>, <a href="https://onelonecoder.wordpress.com/category/rest/" rel="category tag">REST</a>, <a href="https://onelonecoder.wordpress.com/category/web-services/" rel="category tag">web-services</a></span><span class="tags-links">Tagged <a href="https://onelonecoder.wordpress.com/tag/android/" rel="tag">android</a>, <a href="https://onelonecoder.wordpress.com/tag/demo/" rel="tag">demo</a>, <a href="https://onelonecoder.wordpress.com/tag/gson/" rel="tag">GSON</a>, <a href="https://onelonecoder.wordpress.com/tag/rest/" rel="tag">REST</a>, <a href="https://onelonecoder.wordpress.com/tag/restful/" rel="tag">RESTful</a>, <a href="https://onelonecoder.wordpress.com/tag/retrofit/" rel="tag">Retrofit</a>, <a href="https://onelonecoder.wordpress.com/tag/sample/" rel="tag">sample</a>, <a href="https://onelonecoder.wordpress.com/tag/web-services/" rel="tag">web-services</a></span><span class="comments-link"><a href="https://onelonecoder.wordpress.com/2015/04/16/andorid-restful-client-using-retrofit-gson/#respond">Leave a comment</a></span>	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+						<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">Post navigation</h1>
+		<div class="nav-links">
+			<a href="https://onelonecoder.wordpress.com/2015/04/03/ormlite-a-lightweight-database-mapping-library-for-android/" rel="prev"><span class="meta-nav">Previous Post</span>ORMLite a lightweight database mapping library for&nbsp;Android</a><a href="https://onelonecoder.wordpress.com/2015/08/02/objective-c-custom-video-player/" rel="next"><span class="meta-nav">Next Post</span>Objective-C Custom Video&nbsp;Player</a>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+					
+<div id="comments" class="comments-area">
+
+	
+	
+	
+							<div id="respond" class="comment-respond js">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://onelonecoder.wordpress.com/2015/04/16/andorid-restful-client-using-retrofit-gson/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="https://onelonecoder.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+																																						<input id="highlander_comment_nonce" name="highlander_comment_nonce" value="afe2ea09ab" type="hidden"><input name="_wp_http_referer" value="/2015/04/16/andorid-restful-client-using-retrofit-gson/" type="hidden">
+<input name="hc_post_as" id="hc_post_as" value="wordpress" type="hidden">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea class="autosizejs " tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px none; padding: 0px; box-sizing: content-box; word-wrap: break-word; height: 0px ! important; min-height: 0px ! important; overflow: hidden; transition: none 0s ease 0s ; font-family: &quot;Noto Sans&quot;,sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: 17px; width: 678px;">Enter your comment here...</textarea><textarea style="height: 125px; overflow: hidden; word-wrap: break-word; resize: none;" placeholder="Enter your comment here..." id="comment" name="comment" title="Enter your comment here..."></textarea></div>
+</div>
+
+<div style="display: none;" id="comment-form-identity">
+
+	<div style="display: none;" id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li style="display:none;">
+				<a href="#comment-form-guest" id="postas-guest" title="Guest">
+					<span></span>
+				</a>
+			</li>
+			<li class="selected">
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="https://public-api.wordpress.com/connect/?googleplus-sign-in=https%3A%2F%2Fonelonecoder.wordpress.com" scrolling="no" allowtransparency="true" seamless="seamless" width="24" frameborder="0" height="24"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div style="" id="comment-form-guest" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="a_data/ad516503a11cd5ca435acc9bb6523536.png" alt="Gravatar" class="no-grav" width="25">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email"></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text"></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text"></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="a_data/27f82b3f3caa5de1f483f59196a0630c.jpeg" alt="Gravatar" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="https://2.gravatar.com/avatar/27f82b3f3caa5de1f483f59196a0630c?s=25&amp;d=https%3A%2F%2Fs2.wp.com%2Fwp-content%2Fmu-plugins%2Fhighlander-comments%2Fimages%2Fwplogo.png&amp;r=G" type="hidden">
+				<input name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="88961200" type="hidden">
+				<input name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="434e043288343c8c4252af15ee5b2030a9b49e1f" type="hidden">
+				<p class="comment-form-posting-as pa-wordpress"><strong>Oshanz:</strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'wordpress'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="a_data/ad516503a11cd5ca435acc9bb6523536.png" alt="Twitter picture" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="" type="hidden">
+				<input name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="" type="hidden">
+				<input name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="" type="hidden">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'twitter'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="a_data/ad516503a11cd5ca435acc9bb6523536.png" alt="Facebook photo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="" type="hidden">
+				<input name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="" type="hidden">
+				<input name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="" type="hidden">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'facebook'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="a_data/ad516503a11cd5ca435acc9bb6523536.png" alt="Google+ photo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="" type="hidden">
+				<input name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="" type="hidden">
+				<input name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="" type="hidden">
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'googleplus'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div style="display: none;" id="comment-form-subscribe">
+	<p class="comment-subscription-form"><input name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6" type="checkbox"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p></div>
+
+						
+						<p style="display: none;" class="form-submit"><input name="submit" id="comment-submit" class="submit" value="Post Comment" type="submit"> <input name="comment_post_ID" value="97" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="86578ea174" type="hidden"></p>
+<input name="genseq" value="1440655993" type="hidden">
+<p style="display: none;"></p>					<input id="ak_js" name="ak_js" value="1440656091632" type="hidden"></form>
+							</div><!-- #respond -->
+			<div style="clear: both"></div>
+</div><!-- #comments -->
+
+				
+			</main><!-- #main -->
+		</div><!-- #primary -->
+
+
+		<div id="secondary" class="widget-area" role="complementary">
+		<aside id="search-2" class="widget widget_search"><h2 class="widget-title">Search</h2><form role="search" method="get" class="search-form" action="https://onelonecoder.wordpress.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input class="search-field" placeholder="Search …" name="s" title="Search for:" type="search">
+				</label>
+				<input class="search-submit" value="Search" type="submit">
+			</form></aside><aside id="tag_cloud-2" class="widget widget_tag_cloud"><h2 class="widget-title">All n All</h2><div style="overflow: hidden;"><a href="https://onelonecoder.wordpress.com/category/all-in-a-day/" style="font-size: 100%; padding: 1px; margin: 1px;" title="All In a Day (1)">All In a Day</a> <a href="https://onelonecoder.wordpress.com/category/android-2/" style="font-size: 158.33333333333%; padding: 1px; margin: 1px;" title="Android (2)">Android</a> <a href="https://onelonecoder.wordpress.com/category/gson/" style="font-size: 100%; padding: 1px; margin: 1px;" title="GSON (1)">GSON</a> <a href="https://onelonecoder.wordpress.com/category/happycoding/" style="font-size: 275%; padding: 1px; margin: 1px;" title="HappyCoding (4)">HappyCoding</a> <a href="https://onelonecoder.wordpress.com/category/objective-c/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Objective-C (1)">Objective-C</a> <a href="https://onelonecoder.wordpress.com/category/orm/" style="font-size: 100%; padding: 1px; margin: 1px;" title="ORM (1)">ORM</a> <a href="https://onelonecoder.wordpress.com/category/rest/" style="font-size: 100%; padding: 1px; margin: 1px;" title="REST (1)">REST</a> <a href="https://onelonecoder.wordpress.com/category/web-services/" style="font-size: 100%; padding: 1px; margin: 1px;" title="web-services (1)">web-services</a> </div></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<li>
+				<a href="https://onelonecoder.wordpress.com/2015/08/02/objective-c-custom-video-player/">Objective-C Custom Video Player</a>
+						</li>
+					<li>
+				<a href="https://onelonecoder.wordpress.com/2015/04/16/andorid-restful-client-using-retrofit-gson/">Andorid RESTful client using Retrofit &amp; Gson</a>
+						</li>
+					<li>
+				<a href="https://onelonecoder.wordpress.com/2015/04/03/ormlite-a-lightweight-database-mapping-library-for-android/">ORMLite a lightweight database mapping library for Android</a>
+						</li>
+					<li>
+				<a href="https://onelonecoder.wordpress.com/2015/03/26/slt-broadband-usage-meter/">SLT Broadband Usage Meter</a>
+						</li>
+					<li>
+				<a href="https://onelonecoder.wordpress.com/2015/03/26/me-on-google-play/">Me on Google Play</a>
+						</li>
+				</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categories</h2>		<ul>
+	<li class="cat-item cat-item-210746"><a href="https://onelonecoder.wordpress.com/category/all-in-a-day/">All In a Day</a> (1)
+</li>
+	<li class="cat-item cat-item-15948407"><a href="https://onelonecoder.wordpress.com/category/android-2/">Android</a> (2)
+</li>
+	<li class="cat-item cat-item-2769828"><a href="https://onelonecoder.wordpress.com/category/gson/">GSON</a> (1)
+</li>
+	<li class="cat-item cat-item-194951938"><a href="https://onelonecoder.wordpress.com/category/happycoding/">HappyCoding</a> (4)
+</li>
+	<li class="cat-item cat-item-12117"><a href="https://onelonecoder.wordpress.com/category/objective-c/">Objective-C</a> (1)
+</li>
+	<li class="cat-item cat-item-43230"><a href="https://onelonecoder.wordpress.com/category/orm/">ORM</a> (1)
+</li>
+	<li class="cat-item cat-item-15314"><a href="https://onelonecoder.wordpress.com/category/rest/">REST</a> (1)
+</li>
+	<li class="cat-item cat-item-2358"><a href="https://onelonecoder.wordpress.com/category/web-services/">web-services</a> (1)
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h2 class="widget-title">Meta</h2>			<ul>
+			<li><a href="https://onelonecoder.wordpress.com/wp-admin/">Site Admin</a></li>			<li><a href="https://onelonecoder.wordpress.com/wp-login.php?action=logout&amp;_wpnonce=f65ff02016">Log out</a></li>
+			<li><a href="https://onelonecoder.wordpress.com/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://onelonecoder.wordpress.com/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+<li><a href="http://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>			</ul>
+</aside><aside id="follow_button_widget-2" class="widget widget_follow_button_widget">
+		<iframe scrolling="no" src="//widgets.wp.com/follow/index.html#href=onelonecoder.wordpress.com&amp;lang=en&amp;blog=https%3A%2F%2Fonelonecoder.wordpress.com&amp;show_follower_count=true" width="100%" frameborder="0" height="20"></iframe>
+		<script type="text/javascript">(function(d){var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');p.type = 'text/javascript';p.async = true;p.src = '//widgets.wp.com/platform.js';f.parentNode.insertBefore(p,f);}(document));</script>
+
+		</aside>	</div><!-- #secondary -->
+	
+</div><!-- .content-wrapper -->
+
+	</div><!-- #content -->
+
+	
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+				<div class="site-info">
+			<a href="https://wordpress.com/?ref=footer_website">Create a free website or blog at WordPress.com</a>.
+			<span class="sep"> | </span>
+			<a href="https://wordpress.com/themes/goran/" title="Learn more about this theme">The Goran Theme</a>.		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<!-- wpcom_wp_footer -->
+	<script type="text/javascript">
+	/* <![CDATA[ */
+		jQuery(document).ready( function($) {
+			function doFollowingHover() {
+				$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
+
+				$('#wp-admin-bar-follow > a').bind( 'mouseover.unfollow', function() {
+
+					$(this).html( "Unfollow" ).parent( 'li' ).addClass( 'unfollow' );
+				});
+				$('#wp-admin-bar-follow > a').bind( 'mouseout.unfollow', function() {
+					$(this).html( "Following" ).parent( 'li' ).removeClass( 'unfollow' );
+				});
+			}
+			
+			$('#wp-admin-bar-follow > a').click( function( e ) {
+				$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
+
+				e.preventDefault();
+
+				var link = $( this ), li = $( '#wp-admin-bar-follow' ), timeout = 0;
+
+				if ( li.hasClass( 'subscribed' ) ) {
+					li.removeClass( 'subscribed' ).removeClass( 'unfollow' );
+					link.html( "Follow" );
+
+					$('body').append( $( 'div.wpcom-bubble' ).removeClass( 'fadein' ) ).off( 'click.bubble' );
+
+					var action = 'ab_unsubscribe_from_blog';
+				} else {
+					li.addClass( 'subscribed' ).removeClass( 'unfollow' );
+					link.html( "Following" );
+
+						var left = 131 - link.width();
+						li.append( $( 'div.wpcom-bubble' ).css( { left: '-' + left + 'px' } ) );
+						$( 'div.bubble-txt', 'div.wpcom-bubble' ).html( "New posts from this blog will now appear in <a target=\"_blank\" href=\"http:\/\/wordpress.com\/\">your reader<\/a>. You can manage email alerts from your <a target=\"_blank\" href=\"http:\/\/wordpress.com\/following\/edit\/\">subscriptions page<\/a>." );
+
+						$( 'div.wpcom-bubble.action-bubble' ).addClass( 'fadein' );
+
+						setTimeout( function() {
+							$('body').on( 'click.bubble touchstart.bubble', function(e) {
+								if ( !$(e.target).hasClass('wpcom-bubble') && !$(e.target).parents( 'div.wpcom-bubble' ).length )
+									hideBubble();
+							});
+							setTimeout( hideBubble, 15000 );
+						}, 500 );
+
+					var action = 'ab_subscribe_to_blog';
+					$('#wp-admin-bar-follow > a').bind( 'mouseout.shift', function() {
+						doFollowingHover();
+						$(this).unbind( '.shift' );
+					});
+				}
+
+				var nonce = link.attr( 'href' ).split( '_wpnonce=' );
+				nonce = nonce[1];
+
+				$.post( "https:\/\/onelonecoder.wordpress.com\/wp-admin\/admin-ajax.php", {
+					'action': action,
+					'_wpnonce': nonce,
+					'source': 'admin_bar',
+					'blog_id': 87970670				});
+			});
+		});
+	/* ]]> */
+	</script>
+<script type="text/javascript" src="a_data/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":"27f82b3f3caa5de1f483f59196a0630c"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://s2.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1380573781g"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	</div>
+
+	<div id="ab-reblog-box">
+		<form action="" name="reblog">
+			<textarea id="reblog-content" name="reblog-content" placeholder="Add your thoughts here... (optional)"></textarea>
+			<label for="blogid" id="lblogid">Post to</label>
+
+			<select name="to_blog_id" id="reblog-to-blog-id">
+														<option selected="selected" value="93636570">oshan wisumperuma</option>
+							</select>
+
+			<div class="submit">
+				<span class="canceltext"><a href="" class="cancel">Cancel</a></span>
+				<input name="reblog-submit" class="button-primary" id="reblog-submit" value="Reblog Post" type="submit">
+				<input id="original-blog-id" value="87970670" type="hidden">
+				<input id="original-post-id" value="97" type="hidden">
+			</div>
+
+			<input id="_wpnonce" name="_wpnonce" value="f63733534a" type="hidden"><input name="_wp_http_referer" value="/2015/04/16/andorid-restful-client-using-retrofit-gson/" type="hidden">		</form>
+
+		<div class="arrow"></div>
+	</div>
+
+	<script type="text/javascript">
+	var wpcom_reblog = {
+		request: false,
+		source: 'toolbar',
+
+		init: function() {
+			// Click reblog button on post
+			jQuery(document).on( 'click', '#wpadminbar .reblog', function(e) {
+				e.preventDefault();
+				wpcom_reblog.source = 'toolbar';
+
+				if ( jQuery( '#wpadminbar #ab-reblog-box' ).is( ':visible' ) ) {
+					wpcom_reblog.cancel_reblog();
+				}
+				else {
+					wpcom_reblog.show_reblog_box();
+				}
+			} );
+
+			// Clicked reblog button on already reblogged post.
+			jQuery(document).on( 'click', '#wpadminbar .reblogged', function(e) {
+				e.preventDefault();
+			});
+
+			// Click cancel reblog button
+			jQuery(document).on( 'click', '#ab-reblog-box a.cancel', function(e) {
+				e.preventDefault();
+				wpcom_reblog.cancel_reblog();
+			});
+
+			// Submit reblog box
+			jQuery(document).on( 'click', '#ab-reblog-box input[type=submit]', function(e) {
+				e.preventDefault();
+				wpcom_reblog.submit_reblog( jQuery(this) );
+			});
+		},
+
+		show_reblog_box: function() {
+			return this.show_reblog_box_here(
+				'#wp-admin-bar-wpr-reblog',
+				'#wpadminbar'
+			);
+		},
+
+		toggle_reblog_box_flair: function( obj_id ) {
+			if ( jQuery( '#jp-post-flair #ab-reblog-box' ).is( ':visible' ) ) {
+				wpcom_reblog.cancel_reblog();
+			}
+			else {
+				wpcom_reblog.show_reblog_box_flair( obj_id );
+			}
+		},
+
+		show_reblog_box_flair: function( obj_id ) {
+			this.source = 'post_flair';
+			this.obj_id = obj_id;
+			return this.show_reblog_box_here(
+				'.post-likes-widget',
+				'body'
+			);
+		},
+
+		show_reblog_box_here: function(anchorId, parentId) {
+			var jq = jQuery,
+			    $anchor = jq( anchorId ),
+			    $parent = jq( parentId ),
+			    $window = jq( window ),
+			    $scroll = jq('html, body'),
+			    $reblog_box = jq( '#ab-reblog-box' ),
+			    offset = $anchor.offset(),
+			    left = offset.left + 'px',
+			    width = '500px',
+			    position,
+			    top;
+
+			if ( $parent.css( 'position' ) === 'fixed' ) {
+				position = 'fixed';
+				top = $parent.position().top + $parent.outerHeight();
+			}
+			else {
+				position = 'absolute';
+				top = offset.top + $anchor.outerHeight() + 'px';
+			}
+			$reblog_box.remove();
+			$parent.append( $reblog_box );
+			$anchor.addClass( 'selected' );
+
+			if ( jq( window ).innerWidth() < offset.left + 500 ) {
+				// Most likely mobile or tablet
+				left = '0px';
+				width = ( jq( window ).innerWidth() - 24 ) + 'px';
+			}
+
+			$reblog_box
+				.find('p.response').remove().end()
+				.find('div.submit, div.submit span.canceltext').show().end()
+				.find('div.submit input[type=submit]').prop('disabled',false).end()
+				.show()
+				.css({
+					top : top,
+					left : left,
+					width : width,
+					position: position,
+					'z-index': 10 // slide under twentyfourteen's fixed-positioned masthead
+				});
+
+			// Ensure we can see the whole reblog box
+			var docViewTop = $window.scrollTop(),
+			    windowHeight = $window.height(),
+			    docViewBottom = docViewTop + windowHeight,
+			    elemTop = $reblog_box.offset().top,
+			    elemHeight = $reblog_box.outerHeight() + 10,
+			    elemBottom = elemTop + elemHeight;
+			if ( docViewTop > elemTop ) {
+				// Need to scroll up
+				// leave 75px for toolbar + Reblog button + margin
+				$scroll.animate({scrollTop: elemTop - 75});
+			}
+			else if ( docViewBottom < elemBottom ) {
+				// Need to scroll down
+				$scroll.animate({scrollTop: elemBottom - windowHeight}, 100);
+			}
+		},
+
+		submit_reblog: function( input ) {
+			var jq = jQuery;
+			var self = this;
+			if ( typeof this.request == 'object' )
+				this.request.abort();
+
+			input.attr( 'value', 'Reblogging...' );
+			input.prop( 'disabled', true );
+
+			jq( '#ab-reblog-box div.submit span.canceltext' ).fadeOut( 150, function() {
+				input.before( '<span class="spinner"></span>' );
+			});
+
+			var note = jq('#ab-reblog-box textarea').val();
+
+			if ( jq('#default-reblog-note').val() == note )
+				note = "";
+
+			this.request = jq.get( '/wp-admin/admin-ajax.php', {
+				'action': 'post_reblog',
+				'original_blog_id': jq('#original-blog-id').val(),
+				'original_post_id': jq('#original-post-id').val(),
+				'blog_id': jq('#ab-reblog-box select').val(),
+				'note': note,
+				'_wpnonce': jq('#ab-reblog-box #_wpnonce').val(),
+				'reblog_source': this.source
+			},
+			function(result, status, jqxhr) {
+				if ( ! ( "type" in result ) ) {
+					alert( "Error: " + jqxhr.responseText );
+				}
+				else if ( "error" == result.type ) {
+					alert( result.message );
+				}
+				else {
+					if ( typeof pm === 'function' ) {
+						console.log(self);
+						pm({
+							target : window.frames['likes-master'],
+							type : 'likesMessage',
+							data : { event: 'didReblog', obj_id: self.obj_id },
+							origin : '*'
+						});
+					}
+
+					jq( '#ab-reblog-box' ).hide();
+					jq( '#wp-admin-bar-wpr-reblog' ).addClass( 'reblogged' ).removeClass( 'reblog' ).find( 'a:first' ).text( 'Reblogged' );
+				}
+			}, 'json' );
+		},
+
+		cancel_reblog: function() {
+			jQuery( '#ab-reblog-box' ).hide();
+			jQuery( '#wp-admin-bar-wpr-reblog' ).removeClass( 'selected' );
+		}
+	};
+
+	wpcom_reblog.init();
+	</script>
+<div id="report-form-window" style="display:none;"></div><script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/onelonecoder.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/onelonecoder.wordpress.com\/wp-login.php?action=logout&_wpnonce=f65ff02016","homeURL":"https:\/\/onelonecoder.wordpress.com\/","postID":"97","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"1","isJetpack":"0","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://s2.wp.com/_static/??/wp-content/js/jquery/jquery.autoresize.js,/wp-content/mu-plugins/highlander-comments/script.js?m=1424115551j"></script>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/onelonecoder.wordpress.com\/2015\/04\/16\/andorid-restful-client-using-retrofit-gson\/":97};
+	</script>
+		<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+		});
+		</script>
+				<iframe class="bdeayhibfkhdpmnbyehw" src="https://widgets.wp.com/likes/master.html?ver=20141028#ver=20141028&amp;mp6=1" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesWidgetBatch = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesBatchHandler() {
+				var requests = [];
+				jQuery( 'div.jetpack-likes-widget-unloaded' ).each( function( i ) {
+					if ( jetpackLikesWidgetBatch.indexOf( this.id ) > -1 )
+						return;
+					jetpackLikesWidgetBatch.push( this.id );
+					var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+					var match = regex.exec( this.id );
+					if ( ! match || match.length != 5 )
+						return;
+
+					var info = {
+						blog_id: match[2],
+						width:   this.width
+					};
+
+					if ( 'post' == match[1] ) {
+						info.post_id = match[3];
+					} else if ( 'comment' == match[1] ) {
+						info.comment_id = match[3];
+					}
+
+					info.obj_id = match[4];
+
+					requests.push( info );
+				});
+
+				if ( requests.length > 0 ) {
+					JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+				}
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' ),
+								isRtl: ( 'rtl' == jQuery( '#wpadminbar' ).css( 'direction' ) )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						JetpackLikesBatchHandler();
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'clickReblogFlair' == event.event ) {
+					wpcom_reblog.toggle_reblog_box_flair( event.obj_id );
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Grab any unloaded widgets for a batch request
+					JetpackLikesBatchHandler();
+
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				if ( 'undefined' === typeof wrapperID ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type="text/javascript" src="https://s1.wp.com/wp-content/mu-plugins/akismet-3.0/_inc/form.js?m=1404442431g"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"https:\/\/s1.wp.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"https:\/\/s1.wp.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var comment_like_text = {"loading":"Loading..."};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var JetpackEmojiSettings = {"base_url":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/emoji\/twemoji\/"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpNotesArgs = {"cacheBuster":"20150825","iframeUrl":"https:\/\/widgets.wp.com\/notifications\/","iframeAppend":"2","iframeScroll":"no","wide":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcom_tos_report_form = {"ajaxurl":"\/wp-admin\/admin-ajax.php","isLoggedoutUser":"","post_ID":"97","current_url":"https:\/\/onelonecoder.wordpress.com\/2015\/04\/16\/andorid-restful-client-using-retrofit-gson","report_this_content":"Report this content"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var actionbardata = {"siteID":"87970670","siteName":"onelonecoder","siteURL":"http:\/\/onelonecoder.wordpress.com","icon":"<img alt='' src='https:\/\/secure.gravatar.com\/blavatar\/05c2d4a6d553c23ac7787b4c14eed377?s=36' class='avatar avatar-36' height='36' width='36' \/>","canManageOptions":"","canCustomizeSite":"","customizeLink":"http:\/\/onelonecoder.wordpress.com\/wp-admin\/customize.php?url=https:\/\/onelonecoder.wordpress.com\/2015\/04\/16\/andorid-restful-client-using-retrofit-gson?year=2015&monthnum=04&day=16&name=andorid-restful-client-using-retrofit-gson","isFollowing":"","themeSlug":"pub\/goran","themeURL":"http:\/\/theme.wordpress.com\/themes\/goran\/","xhrURL":"https:\/\/onelonecoder.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"823f631c2d","isSingular":"1","isFolded":"","postID":"97","shortlink":"http:\/\/wp.me\/p5X7bM-1z","canEditPost":"","editLink":"https:\/\/wordpress.com\/post\/87970670\/97","i18n":{"view":"View Site","follow":"Follow","following":"Following","edit":"Edit","customize":"Customize","report":"Report this content","themeInfo":"Get theme: Goran","shortlink":"Copy shortlink","copied":"Copied","followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","editSubs":"Manage Sites I Follow"}};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://s0.wp.com/_static/??-eJyVku1WgzAMhm/Irptn7vjH47WUkkGAJj39gHn3tlOQIWP6h4TmeZs0iRysQNJdLMHLxktVGiRRKLdLdtf4J5kAzRSAQo6X0KMGexlDc22oUbcFXyZnqTdR2C5WSLM8Ka7ZiJ+89zWJM+lIdNh+JeywkH5AC/8R3RwshaEGkzAbCwklUuZ9izbB1Ioz6+jFGVcfP17rwHYfa82b1QSGG5RhuLEP+QaCVboVf6NvqHmhkUpwXrODeZVzolB5egR3VsBEH5Sut5pOHOD7K3JjmET//JCfdmAbDuxzl9mFNBFnlv8bI63YqetMSfVYqYD8631r9NXZ2mWdb8q7PHkbtGWfCu0UOulr5ZCq0SbRu3k7HI/70/708npoPgHSBFh/"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="//stats.wp.com/w.js?48" type="text/javascript" async="" defer="defer"></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['identifyUser', 88961200, 'oshanwisumperuma']);
+_tkq.push(['storeContext', {'blog_id':'87970670','blog_tz':'0','user_lang':'en','blog_lang':'en'}]);
+_stq.push(['view', {'blog':'87970670','v':'wpcom','tz':'0','user_id':'88961200','post':'97','subd':'onelonecoder'}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1zNDZ8S252Wis9XUQyb3YrcUVIU2R0VH5TdWI5d350TFdaeXR4OFRqPytqcHcxeT1JUVVCclRNUmxkUWhYX21NQTlVZzhBNUIuelNvLXRZendySjh8XVMzb3o2Wmc3RmNKV3xDcWQmcm1bOSUvZktOeC1zMW55VS94T1ZBeElqZFk/SFdQYUFON014NG03dTMsWD9bV2RNLEItXVR0Z3hHME42VlUwJmFXOU1zblAmVzdTTVdhVGtlcEFKZiZKNXl+WnE9fDN4cnJGYkNJLVJFWFdRdU9yYT1rLG12UGVTb09hRkxNJktveG5DZU1qQV1ML3hsVkpGaUpma3lScFdmTlVxeGM4ZmFVZ3hqMzgrTlJrTWpoQV95Q3E='}]);
+_stq.push([ 'clickTrackerInit', '87970670', '97' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+		<div id="wpadminbar" class="ltr">
+							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar" tabindex="0">
+				<ul id="wp-admin-bar-root-default" class="ab-top-menu">
+		<li id="wp-admin-bar-blog" class="menupop my-sites"><a class="ab-item" aria-haspopup="true" href="https://wordpress.com/stats/oshanwisumperuma.wordpress.com">My Site</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-blog-default" class="ab-submenu">
+		<li id="wp-admin-bar-blog-info" class="all-my-sites"><div class="ab-item ab-empty-item"><div class="ab-site-icon"></div><a href="https://wordpress.com/stats"><span class="ab-site-title">All My Sites</span><span class="ab-site-description">Manage all my sites</span></a></div>		</li>
+		<li id="wp-admin-bar-new-site"><a class="ab-item" href="https://signup.wordpress.com/signup/">+ Add New WordPress</a>		</li>
+		<li id="wp-admin-bar-blog-stats" class="mb-icon"><a class="ab-item" href="https://wordpress.com/stats">Stats</a>		</li></ul><ul id="wp-admin-bar-blog-secondary" class="ab-sub-secondary ab-submenu">
+		<li id="wp-admin-bar-shortlink"><a class="ab-item" href="http://wp.me/p5X7bM-1z">Shortlink: http://wp.me/p5X7bM-1z</a><label for="adminbar-shortlink-input">Shortlink: </label><input id="adminbar-shortlink-input" value="http://wp.me/p5X7bM-1z" readonly="readonly">		</li>
+		<li id="wp-admin-bar-theme-goran"><a class="ab-item" href="http://theme.wordpress.com/themes/goran/">Theme: Goran</a>		</li>
+		<li id="wp-admin-bar-wpcom_report_url"><a class="ab-item" href="http://en.wordpress.com/complaints/">Report this content</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-jumptotop-button-menu"><a class="ab-item" href="#"><div id="jumptotop"><span class="noticon noticon-top"></span></div></a>		</li>
+		<li id="wp-admin-bar-newdash" class="menupop"><a class="ab-item" aria-haspopup="true" href="https://wordpress.com/">Reader</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-newdash-default" class="ab-submenu">
+		<li id="wp-admin-bar-following"><a class="ab-item" href="https://wordpress.com/">Blogs I Follow</a>		</li></ul><ul id="wp-admin-bar-discover" class="ab-submenu">
+		<li id="wp-admin-bar-discover-header" class="ab-submenu-header"><div class="ab-item ab-empty-item">Discover</div>		</li>
+		<li id="wp-admin-bar-discover-freshly-pressed"><a class="ab-item" href="https://wordpress.com/fresh/">Freshly Pressed</a>		</li>
+		<li id="wp-admin-bar-discover-recommended-blogs"><a class="ab-item" href="https://wordpress.com/recommendations/">Recommended Blogs</a>		</li></ul><ul id="wp-admin-bar-my-activity" class="ab-submenu">
+		<li id="wp-admin-bar-my-activity-header" class="ab-submenu-header"><div class="ab-item ab-empty-item">My Activity</div>		</li>
+		<li id="wp-admin-bar-my-activity-my-comments"><a class="ab-item" href="https://wordpress.com/activities/comments/">My Comments</a>		</li>
+		<li id="wp-admin-bar-my-activity-my-likes"><a class="ab-item" href="https://wordpress.com/activities/likes/">My Likes</a>		</li></ul></div>		</li>
+		<li style="" id="wp-admin-bar-follow"><a class="ab-item" href="https://wordpress.com/read?b=87970670&amp;_wpnonce=823f631c2d"><span id="admin-bar-follow-link">Follow</span></a>		</li>
+		<li style="" id="wp-admin-bar-admin-bar-likes-widget"><div class="ab-item ab-empty-item"></div><iframe class="admin-bar-likes-widget jetpack-likes-widget bdeayhibfkhdpmnbyehw" scrolling="no" name="admin-bar-likes-widget" src="https://widgets.wp.com/likes/#blog_id=87970670&amp;post_id=97&amp;origin=https://onelonecoder.wordpress.com" frameborder="0"></iframe>		</li>
+		<li style="" id="wp-admin-bar-wpr-reblog" class="reblog"><a class="ab-item" href="#reblog">Reblog</a>		</li></ul><ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
+		<li id="wp-admin-bar-notes" class="menupop"><div class="ab-item ab-empty-item"><span id="wpnt-notes-unread-count" class="wpnt-loading wpn-read">
+						<span class="noticon noticon-notification"></span>
+						</span></div><div id="wpnt-notes-panel2" style="display:none" dir="ltr" lang="en"><div class="wpnt-notes-panel-header"><span class="wpnt-notes-header"></span><span class="wpnt-notes-panel-link"></span></div></div>		</li>
+		<li id="wp-admin-bar-my-account" class="menupop with-avatar"><a class="ab-item" aria-haspopup="true" href="https://wordpress.com/me/"><img alt="" src="https://2.gravatar.com/avatar/27f82b3f3caa5de1f483f59196a0630c?s=32&amp;d=mm&amp;r=G" class="avatar avatar-32" width="32" height="32"></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-user-actions" class="ab-submenu">
+		<li id="wp-admin-bar-user-info" class="user-info user-info-item"><div class="ab-item ab-empty-item" tabindex="-1"><img alt="" src="https://2.gravatar.com/avatar/27f82b3f3caa5de1f483f59196a0630c?s=128&amp;d=mm&amp;r=G" class="avatar avatar-128" width="128" height="128"><span class="display-name">Oshanz</span><span class="username"><a class="at-username" href="http://gravatar.com/oshanwisumperuma">oshanwisumperuma</a>&nbsp;·&nbsp;<a href="https://onelonecoder.wordpress.com/wp-login.php?action=logout&amp;redirect_to=https%3A%2F%2Fwordpress.com%2F&amp;_wpnonce=f65ff02016">Sign Out</a></span></div>		</li>
+		<li id="wp-admin-bar-profile-header" class="ab-submenu-header"><div class="ab-item ab-empty-item">Profile</div>		</li>
+		<li id="wp-admin-bar-account-settings"><a class="ab-item" href="https://wordpress.com/me/">Account Settings</a>		</li>
+		<li id="wp-admin-bar-billing"><a class="ab-item" href="https://wordpress.com/me/billing">Billing</a>		</li>
+		<li id="wp-admin-bar-extras-header" class="ab-submenu-header"><div class="ab-item ab-empty-item">Extras</div>		</li>
+		<li id="wp-admin-bar-help" class="user-info-item"><a class="ab-item" href="http://en.support.wordpress.com/">Help</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-ab-new-post"><a class="ab-item" href="https://wordpress.com/post/"></a>		</li></ul>			</div>
+						<a class="screen-reader-shortcut" href="https://onelonecoder.wordpress.com/wp-login.php?action=logout&amp;_wpnonce=f65ff02016">Log Out</a>
+					</div>
+
+		
+<script type="text/javascript">
+/* <![CDATA[ */
+var clickDebugLink;
+
+jQuery(document).ready( function($) {
+	var single = true, w = 1000,
+		supe = false;
+
+	$(document.body).load(function(){ $('#wpadminbar img.grav-hashed').removeClass('grav-hashed'); }); // hack to hide the gravatar hovercard
+
+	if ( single && supe )
+		w = 1385;
+	else if ( supe )
+		w = 1200;
+
+	// debug bar extra
+	clickDebugLink = function( parent_id, obj ) {
+
+		$('#'+parent_id).children('div').hide();
+
+		document.getElementById( obj.href.substr( obj.href.indexOf( '#' ) + 1 ) ).style.display = 'block';
+		$( obj.href.substr( obj.href.indexOf( '#' ) ) ).show()
+
+		$(obj).parent().addClass('current').siblings('li').removeClass('current');
+
+		return false;
+	};
+
+	$( '#wpadminbar #wp-admin-bar-shortlink' ).click( function() {
+		$( '#adminbar-shortlink-input' ).select();
+	});
+
+	// skip tap-to-hover on site switcher for mobile
+	if ( 'ontouchstart' in window ) {
+		$('#wp-admin-bar-switch-site').on( 'touchstart', function( event ) {
+			if ( $( window ).width() > 782 ) {
+				return;
+			}
+			event.stopPropagation();
+			$( event.target ).first( 'a' ).click();
+		});
+	}
+
+});
+/* ]]> */
+</script>
+	<div class="wpcom-bubble action-bubble">
+		<div class="bubble-txt"></div>
+	</div>
+	<script type="text/javascript">function hideBubble() { jQuery('body').append( jQuery( 'div.wpcom-bubble' ).removeClass( 'fadein' ) ).off( 'click.bubble touchstart.bubble' ); jQuery(document).off( 'scroll.bubble' ); };</script>
+		<script type="text/javascript">
+	jQuery( '#wp-admin-bar-jumptotop-button-menu a' ).click( function( e ) {
+		e.preventDefault();
+		jQuery( 'html, body' ).animate( { scrollTop: 0 }, 'fast' );
+	} );
+	function hideShowTbJumpToTop() {
+		var total_width = 0;
+		// Calculate total width taken by li's minus our button to see if we it'll
+		// overlap with other toolbar menus.
+		jQuery( '#wp-admin-bar-root-default > li' ).each( function() {
+			var self = jQuery( this );
+			if ( 'wp-admin-bar-jumptotop-button-menu' != self.attr( 'id' ) )
+				total_width += self.width();
+		});
+		if ( jQuery( '#wp-admin-bar-jumptotop-button-menu' ).position()['left'] - total_width < 10 ) {
+			jQuery( '#jumptotop' ).animate( { 'top': '-50px' }, 'fast' );
+		} else if (  jQuery( window ).scrollTop() >= 350 && parseInt( jQuery( '#jumptotop' ).css( 'top' ) ) < 0 ) {
+			if ( jQuery( '#wp-admin-bar-jumptotop-button-menu' ).position()['left'] - total_width < 10 )
+			   return;
+			jQuery( '#jumptotop' ).animate( { 'top': 0 }, 'fast' );
+		} else if (  jQuery( window ).scrollTop() < 1 && parseInt( jQuery( '#jumptotop' ).css( 'top' ) ) >= 0 ) {
+			jQuery( '#jumptotop' ).animate( { 'top': '-50px' }, 'fast' );
+		}
+	}
+	// handle on page load if auto scrolling to a position
+	hideShowTbJumpToTop();
+	// bind to scrolll event
+	var jumpToTopTimer = null;
+	jQuery( window ).scroll( function() {
+		clearTimeout( jumpToTopTimer );
+		jumpToTopTimer = setTimeout( jumpToTopRefresh, 150 );
+	} );
+	var jumpToTopRefresh = function() {
+		hideShowTbJumpToTop();
+	};
+	</script>
+	<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+
+<div style="display: none;" class="comment-likes-overlay"></div><style>#content > #center > .dose > .dosesingle,#content > #right > .dose > .dosesingle
+{display:none !important;}</style></body></html>
