@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Bigshot One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Bigshot One'), local('BigshotOne'), url(https://fonts.gstatic.com/s/bigshotone/v6/bWykSiy19zUrP0LR0jRzqo4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Bitter-Regular'), url(https://fonts.gstatic.com/s/bitter/v7/zfs6I-5mjWQ3nxqccMoL2A.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Bitter-Bold'), url(https://fonts.gstatic.com/s/bitter/v7/evC1haE-MsorTl_A7_uSGVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Bitter';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Bitter-Italic'), url(https://fonts.gstatic.com/s/bitter/v7/-t3SK6sofTjAH0MNf_tLaPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Vidaloka';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Vidaloka '), local('Vidaloka-Regular'), url(https://fonts.gstatic.com/s/vidaloka/v8/eFa9T8RYEkXovE5TBdfY-fesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+}

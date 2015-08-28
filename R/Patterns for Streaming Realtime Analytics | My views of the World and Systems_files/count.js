@@ -1,0 +1,1 @@
+/**/jQuery111304996545885590957_1440477060235({"count":26,"url":"https:\/\/iwringer.wordpress.com\/2015\/08\/03\/patterns-for-streaming-realtime-analytics\/"});
