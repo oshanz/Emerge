@@ -1,0 +1,8 @@
+http://bigocheatsheet.com/
+
+1) Given a set of 2-dimensional points, compute a skyline. This was easy. I drew upon a common data structure known as a max heap. There are several solutions, here is a good one.
+http://www.algorithmist.com/index.php/UVa_105
+
+2) Design Microsoft Paint. This was by far the most fun problem. I started by drawing up interfaces and a class diagram. I made mention of a Paint Bucket and the interviewer asked me to implement it. Luckily, I knew how to implement an iterative, breadth-first traversal with my eyes closed thanks to TopCoder.
+
+3) Describe your software virtues. This was an “open-ended” discussion interview. I talked about the types of testing and when they are valuable (e.g., unit, integration, acceptance). I talked about consistent style for maintainability of code. And so on. Things you would find in books like Code Complete or Effective Java.
