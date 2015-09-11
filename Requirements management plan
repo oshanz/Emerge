@@ -1,0 +1,25 @@
+
+    Overview of the project – Describing the overview and objectives of the project
+    Terms and Glossary – Terms, abbreviations and definitions specific to the project used in the document can be described here
+    Infrastructure – Hardware, software, tools needed for the project
+    Communication plan/mechanism – what will be the communication mechanism, frequency and audience /stakeholders
+    Structure – Which part of the requirements will be contained in which document e.g. SRS will contain use case description, BRD will contain the business requirements
+    Traceability Guidelines – How the requirements will be traced e.g. project objectives --> stakeholder request -->BRD-->SRS
+    Prioritization Guideline – How the requirements will be prioritized e.g. statutory/legal requirement, Critical business objective then it will be high priority
+    Techniques – what techniques will be used in which situation, from the usual techniques like SWOT, Matrix model, surveys and techniques etc
+    Change Management – How will requirements change be handled, the requirements change management process can be documented here
+    Change control board – the constitution and the authority of the board can be described here e.g. functional requirements <20 Hrs can be authored by Requirements analyst, reviewer can be Lead BA and Domain SME, approver can be PM
+    CM Plan – who will be owner for which document like Flow diagrams, prototypes
+    Metrics – Typical metrics can be % of requirements delivered as per requirements management plan, Average effort spent per detailed requirements document, Number of defects identified per use case
+    Attributes – Attributes of the requirement can be detailed here will need to contain the attribute name, description, type, Values
+    System context – Various system context such as stakeholders, interfacing systems etc
+    Sources and techniques – This will detail out the type of requirements, Source of the requirement, techniques for Elicitation and Modelling
+    Stakeholder Matrix – This will have details of the various stakeholders like name, type, role, Criticality, expectations, contact details etc
+    Resource structure of the BA/RE team with name, role, contact details etc
+    Skill gap analysis and Competencies needed
+    Effort estimate for the Requirements engineering task
+    RACI Matrix for the various types of requirements
+    Risks and assumptions – Risks and Assumptions for the requirements of the project with impact, mitigation plan
+    Activity plan – Activity/ task plan with schedule, responsibility, effort needed, deliverable details
+    RMP checklist – To ensure all the planned activities and tasks are completed
+
