@@ -1,0 +1,21 @@
+I'd strongly suggest not using RepositoryInterface nor an abstract Repository class.
+
+Here's why...
+
+Let's talk abstraction through classification first. When you declare a RepositoryInterface, you are saying that all children of that interface (either abstract or concrete) will "be a Repository". But Repository is a pattern, not a classification. So being a pattern has no real meaning but the motivation behind the pattern itself, that will be communicated through the name or namespace anyway. In other words, "being a Repository" could be conveyed by naming a class "FilmRepository" without the need for a classification, as being a Repository is fullfilling a certain pattern's motivation, not being part of a certain group of things.
+
+Now, let's talk about abstraction through generalization. The way your blog post starts, it's clear that you don't have a real motivation of generalizing: you start off with a general idea, an interface, but you don't really have use cases where this general idea came from. You assume that all children of this interface will need to provide at least those behaviors, and that's where everything starts to fall apart. Generalization - or any kind of abstraction - shouldn't start through assumption, it should (as Kent Beck says in XP) be used when it provides simplicity. By adhering to your interface, I'm forcing myself to some specific behavior, assuming I'll need it in every Repository I ever need, and in exactly the way you created it.
+The comments you received are a strong hint towards that: people start wondering how they'll solve their specific problems whilst also adhering to your contract. That's because they don't really need your contract, but they're forcing their minds to it, and that created unnecesary complexity.
+
+Now, let's talk about your abstract class Repository. Here you decided to provide some implementation to the mix, because Eloquent behaves pretty much the same way in every class that inherits from it. This will bring a plethora of problems, and I can speak of them with confidence: I've done multiple projects with base Repository abstractions and Eloquent, and I've moved away from both.
+
+First off, and I think this is the most important one, you're missing the point of using an Active Record. AR brings a lot of power, flexibility and speed at the cost of having multiple responsibilities in those objects. If you use AR in its full potential, you'll be able to access your data in a more flexible way, and you can build over it without the need for collaborators. Now, this is not againt the Repository pattern per se, but against a generic abstract Repository that does some things out-of-the-box.
+
+The next thing that worries me is reuse through inheritance. Although we do it in Eloquent context, I strongly advice against any code reuse through inheritance: Always reuse through composition and collaboration.
+What if I need to do something slightly different on find() ? You'll probably call parent::find. Then, if you add up a layer (say, cache, for example), you may end up doing multiple parent calls, and tracing that will be horrid. And don't get me started on testing it!
+
+A "common way to access Eloquent models" could be abstracted out to its own class (not abstract). This could help CRUD app makers in having standard access to any Eloquent model without worrying about exactly what it does. A FilmRepository could use this CrudQueryBuilder (I'm just throwing names here) as a collaborator to have generic access, without being coupled to it (or it's methods' signatures) through inheritance.
+
+I do recommend declaring interfaces for each specific repository implementation. a FilmRepository could be implemented by an EloquentFilmRepository, and declare only what the app really needs from films: maybe you don't list them all, as that would kill your server, and you only have a paginate and a find method.
+
+Hope it helps! Cheers :-)
