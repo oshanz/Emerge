@@ -1,0 +1,5 @@
+oshanz@oshan-Emerge:/var/www/html/lara5.1$ vendor/bin/doctrine orm:convert-mapping --from-database --namespace="EMERGE\ERP\Entity" yml /tmp/qwe2 
+
+
+oshanz@oshan-Emerge:/var/www/html/lara5.1$ vendor/bin/doctrine orm:generate-entities --generate-annotations=true /var/www/html/lara5.1/app/EMERGE/ERP/Entities/ --generate-methods=true
+
