@@ -1,0 +1,51 @@
+  Software Architecture Attribute Checklist
+
+After using RUP templates for software architecture specification for few years, we at Eurocenter have decided to build our own set of templates for Software Architecture and for Software Design specifications. The new templates needed to provide enough meta-information to the author for better analyze the system as well as not to miss any important design aspect. There I did some research to identify as much as possible architectural attributes (checklist) which may be important for a designer to consider in developing architecture. Before dive in to the checklist, as a background information let me explain the design documentation we prepare at various stages of a project.
+In fact practically within Eurocenter we use 4 types of design documentations. At very initial stage of the project (proposal and scope stages) we develop ‘Architecture Overview Document’ which presents the very abstract view of our recommended architecture to solve the customer problem as well as several alternative architectures with merits/demerits. This is where we demonstrate our understanding of the problem to our customers (this is particularly helpful in our presale activities).
+The next document on the pipeline is the ‘Software Architecture Specification’, describing the meta-structure of all software structures. Our approach in this document is based on 4+1 views described by Philippe Kruchten.
+Next we perform a detail design analysis based on UML notations to bridge the gap between system architecture and implementation. We call this document the ‘Software Design Specification’.
+The final design document we prepare is called ‘Developer Guideline Documentation’ which serves the purpose of documenting miscellaneous guidelines for the developers. This section may include some best practices, version controlling guide lines, project specific knowledge base, etc. This practice is very close to maintaining a project Wiki, but much organized and get delivered to the customer for reference at the end of the project (note that all our customers are software organizations).
+Now, enough back ground. Let’s have a look at the key attributes in developing a software architecture specification. You may use the following as a checklist to verify that you do not miss any important architectural aspect. Basically these are related with the non-functional goals of your architecture. Perfect system architecture may describe the expected level and realization strategy for each of the following attributes. 
+
+ 
+ 
+     Performance
+        Response time
+        Throughput
+        Scalability (supporting increasing loads – load balancing)
+    Operational
+        Availability
+        Manageability (How to manage executing components like Caches)
+        Upgradeability
+        Reliability
+        Recoverability (Fault Tolerance)
+        Flexibility (Ability to support multiple configurations, workflows, etc)
+        Transparency (Hide the complexities)
+        Distribution, Concurrency and Conflict resolution
+        Integration (Connectivity to other systems)
+        Resources (Constraints and requirements)
+        System configurations
+        Offline Operations
+        Stability, Consistency and Accuracy
+    Maintainability
+        Portability
+        Complexity
+        Understandability
+        Duplication
+        Fragility (possibility of breaking the system due to a change)
+        Extensibility
+        Debugging
+    Security
+        Integrity
+        Authentication
+        Authorization
+        Safety (System may not cause the Monitor to explode)
+        Secrecy
+        Accountability (who did what and when)
+        Verifications and Validations
+    Other
+        Internationalization
+        Configurations
+        Testability (No entity beans, lets use Hibernate)
+        Usability (effective HCI)
+
