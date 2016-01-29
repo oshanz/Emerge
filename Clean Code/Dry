@@ -1,0 +1,4 @@
+The DRY principle states that every piece of knowledge must have a single, unambiguous, authoritative representation within a system, the principle itself is not about code duplication.
+
+
+get rid of primitive obsession, class email, currency vith validation rules	
